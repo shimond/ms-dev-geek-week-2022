@@ -1,4 +1,5 @@
 using EmailService;
+using EmailService.Configuration;
 using EmailService.Contracts;
 using EmailService.Handlers;
 using EmailService.Messaging;
@@ -12,6 +13,8 @@ IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((hostContext, services)=>
     {
         services.Configure<EventBusConfiguration>(hostContext.Configuration.GetSection("EventBus"));
+        services.Configure<SmtpOptions>(hostContext.Configuration.GetSection("Smtp"));
+        
         services.AddTransient<IMessageSerializer, JsonMessageSerializer>();
         services.AddSingleton<IEventBus, RabbitEventBus>();
         services.AddTransient<IEmailSenderService, EmailSenderService>();

@@ -12,9 +12,8 @@ public class DatePassedHandler : EventBusHandler<DatePassedEvent>
     {
         this.emailSenderService = emailSenderService;
     }
-    public override Task Handle(DatePassedEvent @event)
+    public async override Task Handle(DatePassedEvent @event)
     {
-        Console.WriteLine("PASSED" );
-        return Task.CompletedTask;
+        await emailSenderService.SendEmail("Day passed!", "Body", new string[] { "Shimond@any-techs.co.il" }, new string[] { });
     }
 }
