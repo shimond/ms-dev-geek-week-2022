@@ -2,6 +2,18 @@ version: '3.4'
 
 services:
 
+  sqlserver-catgalog:
+    container_name: sqlserver-catgalog
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    volumes:
+      - sqlserverdata:/var/opt/mssql
+    ports:
+      - "1455:1433"
+    environment:
+      - ACCEPT_EULA=Y 
+      - MSSQL_PID=Developer
+      - SA_PASSWORD=8jkGh47hnDw89Haq8LN2
+
   rabbitmq:
     container_name: rabbitmq
     hostname: rabbitmq
@@ -14,7 +26,6 @@ services:
       - RABBITMQ_DEFAULT_PASS=Aa12345678
   
   timerworkerservice:
-    hostname: timerworkerservice
     image: ${DOCKER_REGISTRY-}timerworkerservice
     build:
       context: .
@@ -23,7 +34,6 @@ services:
         - rabbitmq
       
   emailservice:
-    hostname: emailservice
     image: ${DOCKER_REGISTRY-}emailservice
     build:
       context: .
@@ -31,8 +41,27 @@ services:
     depends_on:
         - rabbitmq
       
+  redis:
+    container_name: basket-redis
+    image: redis:6.2-alpine
+    ports:
+      - '6379:6379'
+   
+  catalogapi:
+    image: ${DOCKER_REGISTRY-}catalogapi
+    build:
+      context: .
+      dockerfile: Services/CatalogAPI/Dockerfile
+
+  basketapi:
+    image: ${DOCKER_REGISTRY-}basketapi
+    build:
+      context: .
+      dockerfile: Services/BasketAPI/Dockerfile
 
 volumes:
   sqlserverdata:
     external: false    
+
+
 

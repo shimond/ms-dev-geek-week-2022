@@ -1,0 +1,32 @@
+using BasketAPI.Contracts;
+using BasketAPI.GrpcServices;
+using BasketAPI.Services;
+using StackExchange.Redis;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Additional configuration is required to successfully run gRPC on macOS.
+// For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
+
+// Add services to the container.
+builder.Services.AddGrpc();
+builder.Services.AddScoped<IBasketRepository, RedisBasketRepository>();
+
+builder.Services.AddSingleton<ConnectionMultiplexer>(sp =>
+{
+    var host = $"{builder.Configuration.GetValue<string>("Redis:Host")}:{builder.Configuration.GetValue<int>("Redis:Port")}";
+    var configuration = new ConfigurationOptions()
+    {
+        EndPoints = { host }
+    };
+    return ConnectionMultiplexer.Connect(configuration);
+});
+
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+app.MapGrpcService<BasketService>();
+app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
+
+app.Run();

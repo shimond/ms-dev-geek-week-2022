@@ -1,9 +1,13 @@
+using CatalogAPI.Data.Context;
+using Microsoft.EntityFrameworkCore;
+using System.Data.SqlClient;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddDbContext<CatalogDbContext>(
+       options => options.UseSqlServer("name=ConnectionStrings:catalogDb"));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
