@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{022C2B90-1EB8-4842-90B5-55B3787BAB5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerWorkerService", "TimerWorkerService\TimerWorkerService.csproj", "{DC639446-B98E-47AB-A921-C58124663DCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimerWorkerService", "TimerWorkerService\TimerWorkerService.csproj", "{DC639446-B98E-47AB-A921-C58124663DCB}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7D3FB266-4F78-438F-A738-FA6477B118A1}"
 EndProject
@@ -13,13 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Compose", "Compose", "{86B8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{0752A84F-D1E5-4208-90A1-202D8D1EA52B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Messaging", "Infra\Infrastructure.Messaging\Infrastructure.Messaging.csproj", "{4E2A90DA-F0E0-4AF9-8957-8D41E1BE778B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Messaging", "Infra\Infrastructure.Messaging\Infrastructure.Messaging.csproj", "{4E2A90DA-F0E0-4AF9-8957-8D41E1BE778B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messaging", "Messaging", "{0C35F8F9-23F1-4755-BFFA-05DE4C3260F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.RabbitMQ", "Infra.RabbitMQ\Infra.RabbitMQ.csproj", "{C0B5B436-D2D9-4675-B59B-7FEB186E68C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.RabbitMQ", "Infra.RabbitMQ\Infra.RabbitMQ.csproj", "{C0B5B436-D2D9-4675-B59B-7FEB186E68C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService", "Services\EmailService\EmailService.csproj", "{A29DB202-C6D0-4B8C-B12A-E35105952452}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailService", "Services\EmailService\EmailService.csproj", "{A29DB202-C6D0-4B8C-B12A-E35105952452}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
