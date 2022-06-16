@@ -4,8 +4,9 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>dotnet-TimerWorkerService-DDF379A8-56A3-4549-B9A4-42668F17A63F</UserSecretsId>
+    <UserSecretsId>dotnet-EmailService-268970DC-B0F8-43FD-BF56-32C57A4E7BEB</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Infra.RabbitMQ\Infra.RabbitMQ.csproj" />
-    <ProjectReference Include="..\Infra\Infrastructure.Messaging\Infrastructure.Messaging.csproj" />
+    <ProjectReference Include="..\..\Infra.RabbitMQ\Infra.RabbitMQ.csproj" />
+    <ProjectReference Include="..\..\Infra\Infrastructure.Messaging\Infrastructure.Messaging.csproj" />
   </ItemGroup>
 </Project>

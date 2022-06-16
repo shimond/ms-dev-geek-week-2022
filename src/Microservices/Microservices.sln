@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messaging", "Messaging", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.RabbitMQ", "Infra.RabbitMQ\Infra.RabbitMQ.csproj", "{C0B5B436-D2D9-4675-B59B-7FEB186E68C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService", "Services\EmailService\EmailService.csproj", "{A29DB202-C6D0-4B8C-B12A-E35105952452}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{C0B5B436-D2D9-4675-B59B-7FEB186E68C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0B5B436-D2D9-4675-B59B-7FEB186E68C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0B5B436-D2D9-4675-B59B-7FEB186E68C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A29DB202-C6D0-4B8C-B12A-E35105952452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29DB202-C6D0-4B8C-B12A-E35105952452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29DB202-C6D0-4B8C-B12A-E35105952452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29DB202-C6D0-4B8C-B12A-E35105952452}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{4E2A90DA-F0E0-4AF9-8957-8D41E1BE778B} = {0C35F8F9-23F1-4755-BFFA-05DE4C3260F6}
 		{0C35F8F9-23F1-4755-BFFA-05DE4C3260F6} = {0752A84F-D1E5-4208-90A1-202D8D1EA52B}
 		{C0B5B436-D2D9-4675-B59B-7FEB186E68C3} = {0C35F8F9-23F1-4755-BFFA-05DE4C3260F6}
+		{A29DB202-C6D0-4B8C-B12A-E35105952452} = {022C2B90-1EB8-4842-90B5-55B3787BAB5A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0BAA3ECC-C4D1-44BA-9110-7437C9531C84}

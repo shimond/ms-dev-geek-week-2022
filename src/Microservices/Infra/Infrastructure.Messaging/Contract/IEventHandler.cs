@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Messaging.Contract
 {
-    public interface IEventHandler<TEvent> : IEventHandler
+    public abstract class  EventBusHandler<TEvent> : IEventHandler
     where TEvent : Event
     {
-        Task Handle(TEvent @event);
+        public Task Handle(object @event)
+        {
+            return this.Handle((TEvent)@event );
+        }
+
+        public abstract Task Handle(TEvent @event);
     }
 
     public interface IEventHandler

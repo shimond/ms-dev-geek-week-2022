@@ -3,12 +3,12 @@ using TimerWorkerService.Messaging;
 
 namespace TimerWorkerService;
 
-public class Worker : BackgroundService
+public class TimerWorker : BackgroundService
 {
-    private readonly ILogger<Worker> _logger;
+    private readonly ILogger<TimerWorker> _logger;
     private readonly IEventBus _eventBus;
 
-    public Worker(ILogger<Worker> logger, IEventBus eventBus)
+    public TimerWorker(ILogger<TimerWorker> logger, IEventBus eventBus)
     {
         _logger = logger;
         _eventBus = eventBus;
@@ -18,7 +18,7 @@ public class Worker : BackgroundService
     {
         while (!stoppingToken.IsCancellationRequested)
         {
-            await Task.Delay(10000, stoppingToken);
+            await Task.Delay(1000, stoppingToken);
             await _eventBus.Publish(new DatePassedEvent());
         }
     }
