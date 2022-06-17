@@ -59,9 +59,16 @@ services:
       context: .
       dockerfile: Services/BasketAPI/Dockerfile
 
+  customerbff:
+    image: ${DOCKER_REGISTRY-}customerbff
+    build:
+      context: .
+      dockerfile: GW/CustomerBFF/Dockerfile
+
 volumes:
   sqlserverdata:
     external: false    
+
 
 
 
